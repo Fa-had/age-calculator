@@ -22,6 +22,9 @@
 
     font-family: 'Roboto',' Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif
 }
+.main > div > h1 {
+  text-align: center;
+} 
 body, html{
     height: 100%;
 }
