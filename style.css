@@ -1,0 +1,112 @@
+.output_section {
+    text-align: center;
+}
+.output_section #dobinput {
+    font-size: large;
+    font-family: 'Courier New', Courier, monospace;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: absolute;
+    border: solid 2px black;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: aquamarine;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    animation: glowing 20s linear infinite;
+
+    font-family: 'Roboto',' Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', sans-serif
+}
+body, html{
+    height: 100%;
+}
+.container {
+    margin-top: -8px;
+    margin-left: -8px;
+    margin-right: -8px;
+    height: 100%;
+    background-image: url(background.avif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.calculate {
+  padding: 0.6em 2em;
+  font-size: medium;
+  border: none;
+  outline: none;
+  color: black;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.calculate:hover {
+    cursor: grab;
+}
+
+.calculate:before, .main:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite alternate;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+.calculate:after , .main::after{
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+.calculate:after{
+    background: gray;
+}
+.main::after {
+    background: gray;
+}
+@keyframes glowing {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+}
